@@ -1,0 +1,14 @@
+.obstacle {
+    background-image: url(./images/pipe.png);
+    width: 60px;
+    height: 300px;
+    position: absolute;
+}
+
+.topObstacle {
+    background-image: url(./images/pipe.png);
+    width: 60px;
+    transform: rotate(180deg);
+    height: 300px;
+    position: absolute;
+}
