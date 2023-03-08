@@ -81,5 +81,4 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = true
         document.removeEventListener('keyup', control)
     }
-
 })
