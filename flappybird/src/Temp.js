@@ -29,11 +29,61 @@ useEffect(() => {
   }
 }, []);
 
-function generateObstacle(){
+function generateObstacle() {
   const [obstacleLeft, setObstacleLeft] = useState(1500);
   const [randomHeight, setRandomHeight] = useState(Math.random() * 60);
   const [obstacleBottom, setObstacleBottom] = useState(randomHeight);
+
+  // const obstacle = document.createElement('div');
+  const obstacle = document.createElement('div', { style: { obstacle_style } }, { className: 'obstacle' });
+  const topObstacle = document.createElement('div', { style: { topObstacle_style } }, { className: 'topObstacle' });
+  // const obstacle = document.createElement('div', {
+  //   style:
+  //   {
+  //     backgroundImage: `url(${img2})`,
+  //     width: '60px',
+  //     height: '300px',
+  //     position: 'absolute',
+  //     bottom: obstacleBottom + 'px',
+  //     left: obstacleLeft + 'px'
+  //   }
+  // }, { className: 'obstacle' });
+  // const topObstacle = document.createElement('div', {
+  //   style:
+  //   {
+  //     backgroundImage: `url(${img2})`,
+  //     width: '60px',
+  //     height: '300px',
+  //     position: 'absolute',
+  //     transform: 'rotate(180deg)',
+  //     bottom: obstacleBottom + gap + 'px',
+  //     left: obstacleLeft + 'px'
+  //   }
+  // }, { className: 'topObstacle' });
+
+  if (!isGameOver) {
+    obstacle_style = {
+      backgroundImage: `url(${img2})`,
+      width: '60px',
+      height: '300px',
+      position: 'absolute',
+      bottom: obstacleBottom + 'px',
+      left: obstacleLeft + 'px'
+    }
+
+    topObstacle_style = {
+      backgroundImage: `url(${img2})`,
+      width: '60px',
+      height: '300px',
+      position: 'absolute',
+      transform: 'rotate(180deg)',
+      bottom: obstacleBottom + gap + 'px',
+      left: obstacleLeft + 'px'
+    }
+  }
+
   
+
 }
 
 useEffect(() => {
@@ -53,7 +103,7 @@ useEffect(() => {
   return () => {
     document.removeEventListener('keyup', control);
   }
-},[]);
+}, []);
 
 
 
